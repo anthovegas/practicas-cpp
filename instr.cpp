@@ -22,3 +22,12 @@
 
 //Si ya tienes el branch local y solo quieres subirlo:
 //git push origin nombre-del-branch
+
+//compilar un archivo
+//# En Command Prompt sería:
+//g++ ejercicio_1.cpp -o ejercicio_1
+//ejercicio_1.exe
+
+//# En PowerShell es igual, pero el ejecutable:
+//g++ ejercicio_1.cpp -o ejercicio_1
+//.\ejercicio_1.exe
