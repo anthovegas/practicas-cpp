@@ -25,7 +25,8 @@ class Contacto {
         //Getters
         int GetId() const {return m_id; }
         string GetNombre() const { return m_nombre; }
-        string GetTelefono() const { return m_email; }
+        string GetTelefono() const { return m_telefono; }
+        string GetEmail() const { return m_email;}
 
         //Setters
         void SetId(int id) { m_id = id; }

@@ -5,6 +5,7 @@
 
 //# Crear y cambiar al nuevo branch (si aún no lo has hecho)
 //git checkout -b nombre-del-nuevo-branch
+//guardar el archivo primero
 //# Agregar todos los archivos cambiados
 //git add .
 
