@@ -25,7 +25,7 @@ class Agenda {
 
 
         void GuardarEnArchivo(const string& nombreArchivo) const;
-        void CargaarDesdeArchivo(const string& nombreArchivo);
+        void CargarDesdeArchivo(const string& nombreArchivo);
 
         //Getters
         size_t GetSize() const { return m_size; }
