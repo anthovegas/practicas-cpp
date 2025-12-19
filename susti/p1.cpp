@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 void CrearMatriz(int **&pMatriz, int filas, int columnas) {
@@ -24,10 +25,9 @@ void Prom (int **&pMatriz, double *&pProm, int filas, int columnas) {
     for (int i = 0; i < filas; ++i) {
         double suma = 0.0;
         for (int j = 0; j < columnas; ++j) {
-            suma =+ pMatriz[i][j];
+            suma += pMatriz[i][j];
         }
-        double promedio = suma/columnas;
-        pProm[i] = promedio;
+        pProm[i] = suma/columnas;
 
         cout << "Promedio estudiante " << i + 1 << ": " << pProm[i] << endl;
     }
@@ -39,24 +39,15 @@ void EliminarProm (double *&pProm, int filas, int columnas) {
     pProm = nullptr;
 }
 
-long long factorial(int n) {
-    if (n <= 1) {
-        return 1L;
-    }
-    return n*factorial(n-1);
-}
-
-
 void pSim (double **&pSim, double *&pProm, int filas) {
     
-    int columnas = factorial(filas)/(2*factorial(filas-2));
     pSim = new double*[filas];
     for ( int i = 0; i < filas; ++i) {
-        pSim[i] = new double[columnas];
+        pSim[i] = new double[filas];
     }
     
     for (int i = 0; i < filas; ++i) {
-        for (int j = 0; j < columnas; ++j) {
+        for (int j = 0; j < filas; ++j) {
             pSim[i][j] = 1.0 - (abs(pProm[i]-pProm[j])/4.0);
             
             cout << "Sim[" << i + 1 << "][" << j + 1 << "]: " << pSim[i][j] << " ";
@@ -66,7 +57,6 @@ void pSim (double **&pSim, double *&pProm, int filas) {
 }
 
 void EliminarpSim (double **&pSim, int filas) {
-    int columnas = factorial(filas)/(2*factorial(filas-2));
     for (int i = 0; i < filas; ++i){
         delete[] pSim[i];    
     }
@@ -75,22 +65,20 @@ void EliminarpSim (double **&pSim, int filas) {
 }
 
 void Similitud (double **&pSim, int filas) {
-    int columnas = factorial(filas)/(2*factorial(filas-2));
-    
-    double max = pSim[0][1];
+    double max = -1.0;
     int max_i = 0;
-    int max_j = 1;
+    int max_j = 0;
     for (int i = 0; i < filas; ++i) {
-        for (int j = i + 1; j < columnas; ++j) {
+        for (int j = i + 1; j < filas; ++j) {
             if (pSim[i][j] > max) {
                 max = pSim[i][j];
-                max_i = i + 1;
-                max_j = j + 1;
+                max_i = i;
+                max_j = j;
             }
         }
     }
-    cout << "Estudiantes más similares: " << max_i << " y " << max_j << endl;
-    cout << "Similitud: " << pSim[max_i][max_j] << endl;
+    cout << "Estudiantes más similares: " << max_i + 1 << " y " << max_j + 1 << endl;
+    cout << "Similitud: " << max << endl;
 }
 
 int main () {
@@ -116,8 +104,7 @@ int main () {
     pSim(Sim, pProm, N);
     Similitud(Sim, N);
 
-    EliminarMatriz(Estudiantes, N, M);
-    EliminarProm(pProm, N, M);
     EliminarpSim(Sim, N);
-
+    EliminarProm(pProm, N, M);
+    EliminarMatriz(Estudiantes, N, M);
 }
