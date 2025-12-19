@@ -32,3 +32,5 @@
 //# En PowerShell es igual, pero el ejecutable:
 //g++ ejercicio_1.cpp -o ejercicio_1
 //.\ejercicio_1.exe
+// para regresar a la terminal anterior
+// cd ..
