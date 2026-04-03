@@ -1,5 +1,6 @@
 #include "funciones.h"
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 int main() {
@@ -11,8 +12,8 @@ int main() {
             cout << "El resultado es: 2" << endl;
         }
         else {
-            double resultado = 1 + (1 / calcularXrecursiva(1, n));
-            cout << "El resultado es: " << resultado  << endl;
+            double resultado = 1.0 + (1.0 / calcularXrecursiva(1, n));
+            cout << "El resultado es: " <<  resultado  << endl;
         }
     }
 }

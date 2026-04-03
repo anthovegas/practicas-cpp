@@ -16,7 +16,7 @@ bool natural(int n) {
 double calcularXrecursiva(int i, int n) {
     // caso i = n = 1 aparte.
     //suponiendo i = 1 para iniciar.
-    double numerador = (i + 1) / 2;
+    double numerador = (i + 1.0) / 2.0;
 
     // caso base, si i = n - 1.
     if (i == n - 1) {

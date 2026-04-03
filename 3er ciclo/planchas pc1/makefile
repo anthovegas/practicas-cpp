@@ -1,5 +1,5 @@
 # Nombre del ejecutable final
-TARGET = programa.exe
+TARGET = ejercicio1_uni.exe
 
 # Compilador (en MSYS2 suele ser g++)
 CXX = g++
