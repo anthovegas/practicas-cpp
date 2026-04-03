@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-bool natural(int n){
+bool natural(int n) {
     if (n > 0) {
         cout << "El numero es natural" << endl;
         return true;
