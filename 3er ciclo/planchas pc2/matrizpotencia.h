@@ -1,8 +1,9 @@
 #ifndef __MATRIZPOTENCIA_H__
 #define __MATRIZPOTENCIA_H__
 
+#include <cstddef>  
+
 using TP = unsigned long long int;
-using size_t = int;
 
 void CreateMatrix(TP **&pMat, const size_t rows, const size_t cols);
 void ReadMatrix(TP **pMat, const size_t rows, const size_t cols);

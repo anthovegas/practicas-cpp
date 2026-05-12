@@ -76,3 +76,6 @@ void matrizPotencia(TP **&A, int k, int tamaño) {
                 A[i][j] = Resultado[i][j];
     }
 }
+
+//g++ matrizpotencia.cpp main-potencia.cpp -o potencia.exe
+// ./potencia.exe
